@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
 import { Navbar } from "../ui/Navbar";
 import { Footer } from "../ui/Footer";
+import { Carousels } from "../ui/Carousels";
 
 export const Home = () => {
   return (
     <>
       <Navbar />
+      <Carousels />
       <div className="text-center mt-5 min_vh">
         <h1 className="text-center">Welcome</h1>
         <h3>Rick and Morty Page</h3>

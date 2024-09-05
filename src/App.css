@@ -5,3 +5,11 @@ body {
 .min_vh {
   min-height: 70vh;
 }
+
+.carousel_heigth {
+  height: 500px;
+}
+
+.cursor_pointer {
+  cursor: pointer;
+}

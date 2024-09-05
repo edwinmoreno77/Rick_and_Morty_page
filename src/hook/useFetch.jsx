@@ -36,6 +36,7 @@ export const useFetch = () => {
   return {
     data,
     page,
+    setpage,
     decreasePage,
     increasePage,
   };

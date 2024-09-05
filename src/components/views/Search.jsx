@@ -44,8 +44,8 @@ export const Search = () => {
           />
         </div>
         <div className="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
-          {data?.map((item, i) => (
-            <Card key={i} item={item} />
+          {data?.map((item) => (
+            <Card key={item.id} item={item} />
           ))}
         </div>
       </div>
