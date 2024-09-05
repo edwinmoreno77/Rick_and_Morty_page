@@ -1,0 +1,7 @@
+body {
+  font-family: cursive;
+}
+
+.min_vh {
+  min-height: 70vh;
+}

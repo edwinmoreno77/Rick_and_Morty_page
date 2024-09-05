@@ -22,23 +22,33 @@ export const Navbar = () => {
           <ul className="navbar-nav">
             <li className="nav-item">
               <Link
-                to={`/lista`}
-                className="nav-link active"
+                to={`/list`}
+                className="nav-link "
                 aria-current="page"
                 href="#"
               >
-                Lista
+                List
               </Link>
             </li>
 
             <li className="nav-item">
               <Link
-                to={`/favoritos`}
+                to={`/favorites`}
                 className="nav-link"
                 aria-current="page"
                 href="#"
               >
-                Favoritos
+                Favorites
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
+                to={`/search`}
+                className="nav-link"
+                aria-current="page"
+                href="#"
+              >
+                Search
               </Link>
             </li>
           </ul>
