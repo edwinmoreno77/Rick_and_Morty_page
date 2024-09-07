@@ -1,5 +1,5 @@
 import { Navbar } from "../ui/Navbar";
-import { PagesButtons } from "../ui/PagesButtons";
+import { Pagination } from "../ui/Pagination";
 import { Card } from "../ui/Card";
 import { useFetch } from "../../hook/useFetch";
 import { Footer } from "../ui/Footer";
@@ -18,7 +18,7 @@ export const PageList = () => {
           ))}
         </div>
       </div>
-      <PagesButtons
+      <Pagination
         increasePage={increasePage}
         decreasePage={decreasePage}
         page={page}

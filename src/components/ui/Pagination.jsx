@@ -1,6 +1,6 @@
 import { PropTypes } from "prop-types";
 
-export const PagesButtons = ({ page, increasePage, decreasePage, setpage }) => {
+export const Pagination = ({ page, increasePage, decreasePage, setpage }) => {
   return (
     <div className="d-flex justify-content-center m-3">
       <nav aria-label="Page navigation example">
@@ -58,7 +58,7 @@ export const PagesButtons = ({ page, increasePage, decreasePage, setpage }) => {
   );
 };
 
-PagesButtons.propTypes = {
+Pagination.propTypes = {
   page: PropTypes.number.isRequired,
   increasePage: PropTypes.func.isRequired,
   decreasePage: PropTypes.func.isRequired,

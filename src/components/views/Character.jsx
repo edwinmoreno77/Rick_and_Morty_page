@@ -62,7 +62,7 @@ export const Character = () => {
                 <p className="card-text">Status: {data?.status}</p>
                 <p className="card-text">Origin: {data?.origin.name}</p>
                 <p className="card-text">Location: {data?.location.name}</p>
-                <Link to={`/list`} className="btn mt-5 btn-success">
+                <Link to={`/list`} className="btn my-5 btn-success">
                   Volver
                 </Link>
               </>
