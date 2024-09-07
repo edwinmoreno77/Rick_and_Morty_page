@@ -37,7 +37,7 @@ export const Character = () => {
   return (
     <>
       <Navbar />
-      <div className="container-fd min_vh">
+      <div className="container-fluid min_vh">
         <div className="row">
           <div className="col-12 col-md-5 p-2 d-flex justify-content-center">
             {data ? (

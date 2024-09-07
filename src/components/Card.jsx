@@ -18,7 +18,7 @@ export const Card = ({ item }) => {
       className="d-flex justify-content-center align-items-center p-3"
     >
       {isLoading ? (
-        <div className="card shadow" style={{ width: "18rem" }}>
+        <div className="card card_custom" style={{ width: "18rem" }}>
           <Link to={`${item?.id}`}>
             <img src={item?.image} className="card-img-top" alt="..." />
           </Link>
