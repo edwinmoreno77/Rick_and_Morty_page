@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import { Navbar } from "../ui/Navbar";
-import { Footer } from "../ui/Footer";
-import { Carousels } from "../ui/Carousels";
+import { Navbar } from "../components/Navbar";
+import { Footer } from "../components/Footer";
+import { Carousels } from "../components/Carousels";
 
 export const Home = () => {
   return (

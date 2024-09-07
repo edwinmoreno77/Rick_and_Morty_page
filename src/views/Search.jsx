@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Navbar } from "../ui/Navbar";
-import { Card } from "../ui/Card";
-import { Footer } from "../ui/Footer";
+import { Navbar } from "../components/Navbar";
+import { Card } from "../components/Card";
+import { Footer } from "../components/Footer";
 
 export const Search = () => {
   const [search, setSearch] = useState("");

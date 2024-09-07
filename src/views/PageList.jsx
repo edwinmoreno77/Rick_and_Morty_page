@@ -1,8 +1,8 @@
-import { Navbar } from "../ui/Navbar";
-import { Pagination } from "../ui/Pagination";
-import { Card } from "../ui/Card";
-import { useFetch } from "../../hook/useFetch";
-import { Footer } from "../ui/Footer";
+import { Navbar } from "../components/Navbar";
+import { Pagination } from "../components/Pagination";
+import { Card } from "../components/Card";
+import { Footer } from "../components/Footer";
+import { useFetch } from "../hook/useFetch";
 
 export const PageList = () => {
   const { increasePage, decreasePage, page, data, setpage } = useFetch();

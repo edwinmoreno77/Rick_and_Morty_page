@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { Navbar } from "../ui/Navbar";
-import { Footer } from "../ui/Footer";
+import { Navbar } from "../components/Navbar";
+import { Footer } from "../components/Footer";
 
 export const Character = () => {
   const { id } = useParams();
@@ -37,7 +37,7 @@ export const Character = () => {
   return (
     <>
       <Navbar />
-      <div className="container-fluid min_vh">
+      <div className="container-fd min_vh">
         <div className="row">
           <div className="col-12 col-md-5 p-2 d-flex justify-content-center">
             {data ? (

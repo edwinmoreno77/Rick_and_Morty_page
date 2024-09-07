@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { PageList } from "./components/views/PageList";
-import { Character } from "./components/views/Character";
-import { Home } from "./components/views/Home";
-import { Search } from "./components/views/Search";
-import { NotFound } from "./components/views/NotFound";
+import { PageList } from "./views/PageList";
+import { Character } from "./views/Character";
+import { Home } from "./views/Home";
+import { Search } from "./views/Search";
+import { NotFound } from "./views/NotFound";
 import "./App.css";
 
 function App() {
