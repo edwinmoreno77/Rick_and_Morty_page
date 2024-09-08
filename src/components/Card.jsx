@@ -1,52 +1,48 @@
 import { PropTypes } from "prop-types";
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import blackHeart from "../assets/blackHeart.ico";
+import redHeart from "../assets/redHeart.ico";
 
 export const Card = ({ item }) => {
-  const [isLoading, setisLoading] = useState(false);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setisLoading(!isLoading);
-    }, 300);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const [isRed, setisRed] = useState(false);
 
   return (
-    <div
-      key={item?.id}
-      className="d-flex justify-content-center align-items-center p-3"
-    >
-      {isLoading ? (
-        <div className="card card_custom" style={{ width: "18rem" }}>
+    <>
+      <div key={item?.id} className="flex justify-center items-center p-2">
+        <div className="max-w-sm transition ease-in-out duration-300 bg-slate-50 hover:bg-white scale-95 hover:scale-105 rounded-lg shadow-md hover:shadow-2xl brightness-95 hover:brightness-105 hover:skew-y-1">
           <Link to={`${item?.id}`}>
-            <img src={item?.image} className="card-img-top" alt="..." />
+            <img
+              src={item?.image}
+              className="w-full h-48 md:h-56 lg:h-72 object-cover rounded-t-lg"
+              alt={item.name}
+            />
           </Link>
-          <div className="card-body">
-            <h5 className="card-title">{item?.name}</h5>
-            <Link to={`${item?.id}`} className="btn btn-primary">
-              {item?.name}
-            </Link>
+          <div className="p-4">
+            <h5 className="text-lg font-semibold">{item?.name}</h5>
+            <div className="flex justify-between">
+              <span>{item.id}</span>
+              <p>{item.species}</p>
+            </div>
+            <div className="flex justify-between items-center">
+              <Link
+                to={`${item?.id}`}
+                className="mt-2 inline-block transition ease-in-out  hover:scale-105 bg-lime-400 text-white py-1 px-2 rounded hover:bg-lime-600"
+              >
+                Learn more
+              </Link>
+              <span onClick={() => setisRed(!isRed)}>
+                <img
+                  className="cursor-pointer transition ease-in-out  hover:scale-125"
+                  src={isRed ? redHeart : blackHeart}
+                  width={22}
+                />
+              </span>
+            </div>
           </div>
         </div>
-      ) : (
-        <div className="card" aria-hidden="true">
-          <img src={item?.image} className="card-img-top" alt="..." />
-          <div className="card-body">
-            <h5 className="card-title placeholder-glow">
-              <span className="placeholder col-6"></span>
-            </h5>
-            <p className="card-text placeholder-glow">
-              <span className="placeholder col-7"></span>
-            </p>
-            <a
-              className="btn btn-primary disabled placeholder col-6"
-              aria-disabled="true"
-            ></a>
-          </div>
-        </div>
-      )}
-    </div>
+      </div>
+    </>
   );
 };
 

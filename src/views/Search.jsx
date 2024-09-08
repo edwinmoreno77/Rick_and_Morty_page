@@ -32,18 +32,20 @@ export const Search = () => {
   return (
     <>
       <Navbar />
-      <div className="container-fluid min_vh">
-        <h1 className="text-center mt-3">Search Character by name</h1>
-        <div className="d-flex m-5 p-5">
+      <div className="container mx-auto min-h-screen">
+        <h1 className="text-center mt-3 text-3xl font-bold">
+          Search Character by Name
+        </h1>
+        <div className="flex m-2 p-2 justify-center">
           <input
-            className="form-control"
+            className="form-input w-full md:w-1/3 p-1 border rounded shadow-lg"
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             onKeyDown={() => fetchData(search)}
           />
         </div>
-        <div className="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-1 transition ease-in-out">
           {data?.map((item) => (
             <Card key={item.id} item={item} />
           ))}

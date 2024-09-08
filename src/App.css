@@ -1,24 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   font-family: cursive;
+  background: rgb(243, 243, 243);
 }
 
 .min_vh {
   min-height: 70vh;
 }
 
-.carousel_heigth {
-  height: 500px;
-}
-
 .cursor_pointer {
   cursor: pointer;
-}
-.card_custom {
-  box-shadow: 0px 3px 8px 1.5px rgb(212, 212, 212);
-}
-
-.card_custom:hover {
-  transform: scale(1.03);
-  transition: transform 0.3s ease;
-  box-shadow: 0px 4px 5px 1px rgb(188, 187, 187);
 }

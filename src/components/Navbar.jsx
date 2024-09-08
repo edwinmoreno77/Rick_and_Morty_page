@@ -2,57 +2,34 @@ import { Link } from "react-router-dom";
 
 export const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
-      <div className="container-fluid">
-        <Link to={"/"} className="navbar-brand" href="#">
+    <nav className="bg-gray-900 p-4 text-lime-500">
+      <div className="container mx-auto flex items-center justify-between">
+        <Link to={"/"} className=" text-xl font-semibold hover:text-white">
           Home
         </Link>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
+        <button className="text-white block lg:hidden" type="button">
+          <span className="material-icons">menu</span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav ms-auto">
-            <li className="nav-item">
-              <Link
-                to={`/list`}
-                className="nav-link "
-                aria-current="page"
-                href="#"
-              >
-                List
-              </Link>
-            </li>
-
-            <li className="nav-item">
-              <Link
-                to={`/favorites`}
-                className="nav-link"
-                aria-current="page"
-                href="#"
-              >
-                Favorites
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                to={`/search`}
-                className="nav-link"
-                aria-current="page"
-                href="#"
-              >
-                Search
-              </Link>
-            </li>
-          </ul>
-        </div>
+        <ul className="hidden lg:flex space-x-4">
+          <li>
+            <Link to={`/list`} className="hover:text-white transition-colors">
+              List
+            </Link>
+          </li>
+          <li>
+            <Link
+              to={`/favorites`}
+              className="hover:text-white transition-colors"
+            >
+              Favorites
+            </Link>
+          </li>
+          <li>
+            <Link to={`/search`} className="hover:text-white transition-colors">
+              Search
+            </Link>
+          </li>
+        </ul>
       </div>
     </nav>
   );

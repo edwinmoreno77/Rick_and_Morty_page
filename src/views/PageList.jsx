@@ -10,11 +10,13 @@ export const PageList = () => {
   return (
     <>
       <Navbar />
-      <div className="container-fluid">
-        <h1 className="text-center pt-2">Character list</h1>
-        <div className="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
-          {data?.map((item, i) => (
-            <Card key={i} item={item} />
+      <div className="container mx-auto">
+        <h1 className="text-center pt-3 text-4xl text-lime-500 font-bold underline decoration-lime-500 tracking-tight">
+          Character List
+        </h1>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-1">
+          {data?.map((item) => (
+            <Card key={item.id} item={item} />
           ))}
         </div>
       </div>
