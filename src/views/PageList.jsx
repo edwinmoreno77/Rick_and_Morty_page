@@ -2,10 +2,18 @@ import { Navbar } from "../components/Navbar";
 import { Pagination } from "../components/Pagination";
 import { Card } from "../components/Card";
 import { Footer } from "../components/Footer";
-import { useFetch } from "../hook/useFetch";
+import { useContext, useEffect } from "react";
+import { Context } from "../store/appContext";
 
 export const PageList = () => {
-  const { increasePage, decreasePage, page, data, setpage } = useFetch();
+  const { store, actions } = useContext(Context);
+
+  useEffect(() => {
+    actions.getPages();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  console.log(store.favorites);
 
   return (
     <>
@@ -15,17 +23,12 @@ export const PageList = () => {
           Character List
         </h1>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-1">
-          {data?.map((item) => (
+          {store.pageData?.map((item) => (
             <Card key={item.id} item={item} />
           ))}
         </div>
       </div>
-      <Pagination
-        increasePage={increasePage}
-        decreasePage={decreasePage}
-        page={page}
-        setpage={setpage}
-      />
+      <Pagination />
       <Footer />
     </>
   );

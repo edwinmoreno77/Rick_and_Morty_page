@@ -8,7 +8,7 @@ import redHeart from "../assets/redHeart.ico";
 export const Character = () => {
   const { id } = useParams();
   const [data, setdata] = useState(null);
-  const [isRed, setisRed] = useState(false);
+  const [like, setlike] = useState(false);
 
   const fetchData = async () => {
     try {
@@ -73,10 +73,10 @@ export const Character = () => {
                   >
                     Volver
                   </Link>
-                  <span onClick={() => setisRed(!isRed)}>
+                  <span onClick={() => setlike(!like)}>
                     <img
                       className="cursor-pointer transition ease-in-out  hover:scale-125"
-                      src={isRed ? redHeart : blackHeart}
+                      src={like ? redHeart : blackHeart}
                       width={30}
                     />
                   </span>

@@ -1,11 +1,29 @@
 import { PropTypes } from "prop-types";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { Context } from "../store/appContext";
 import blackHeart from "../assets/blackHeart.ico";
 import redHeart from "../assets/redHeart.ico";
 
 export const Card = ({ item }) => {
-  const [isRed, setisRed] = useState(false);
+  const { actions, store } = useContext(Context);
+  const { addFavorites, removeFavorites } = actions;
+  const { favorites } = store;
+
+  const isFavorite = favorites.some((id) => id == item.id);
+
+  const [like, setlike] = useState(isFavorite);
+
+  useEffect(() => {
+    if (like) {
+      if (!favorites.some((id) => id == item.id)) {
+        addFavorites(item.id);
+      }
+    } else {
+      removeFavorites(item.id);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [like]);
 
   return (
     <>
@@ -31,10 +49,10 @@ export const Card = ({ item }) => {
               >
                 Learn more
               </Link>
-              <span onClick={() => setisRed(!isRed)}>
+              <span onClick={() => setlike(!like)}>
                 <img
                   className="cursor-pointer transition ease-in-out  hover:scale-125"
-                  src={isRed ? redHeart : blackHeart}
+                  src={like ? redHeart : blackHeart}
                   width={22}
                 />
               </span>

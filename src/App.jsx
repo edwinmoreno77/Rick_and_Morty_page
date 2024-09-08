@@ -4,6 +4,7 @@ import { Character } from "./views/Character";
 import { Home } from "./views/Home";
 import { Search } from "./views/Search";
 import { NotFound } from "./views/NotFound";
+import injectContext from "./store/appContext";
 import "./App.css";
 
 function App() {
@@ -24,4 +25,4 @@ function App() {
   );
 }
 
-export default App;
+export default injectContext(App);

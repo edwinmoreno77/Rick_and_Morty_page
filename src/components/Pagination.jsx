@@ -1,6 +1,16 @@
-import { PropTypes } from "prop-types";
+import { useContext, useEffect } from "react";
+import { Context } from "../store/appContext";
 
-export const Pagination = ({ page, increasePage, decreasePage, setpage }) => {
+export const Pagination = () => {
+  const { store, actions } = useContext(Context);
+  const { increasePage, decreasePage, setPage } = actions;
+  const { page } = store;
+
+  useEffect(() => {
+    actions.getPages();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [page]);
+
   return (
     <div className="flex justify-center my-3">
       <nav aria-label="Page navigation example">
@@ -27,7 +37,7 @@ export const Pagination = ({ page, increasePage, decreasePage, setpage }) => {
           <li
             onClick={() => {
               if (page <= 41) {
-                setpage(page + 1);
+                setPage(page + 1);
               }
             }}
             className="cursor-pointer"
@@ -39,7 +49,7 @@ export const Pagination = ({ page, increasePage, decreasePage, setpage }) => {
           <li
             onClick={() => {
               if (page <= 40) {
-                setpage(page + 2);
+                setPage(page + 2);
               }
             }}
             className="cursor-pointer"
@@ -60,11 +70,4 @@ export const Pagination = ({ page, increasePage, decreasePage, setpage }) => {
       </nav>
     </div>
   );
-};
-
-Pagination.propTypes = {
-  page: PropTypes.number.isRequired,
-  increasePage: PropTypes.func.isRequired,
-  decreasePage: PropTypes.func.isRequired,
-  setpage: PropTypes.func.isRequired,
 };
