@@ -13,8 +13,6 @@ export const PageList = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  console.log(store.favorites);
-
   return (
     <>
       <Navbar />

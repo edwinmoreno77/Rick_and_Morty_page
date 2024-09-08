@@ -8,7 +8,7 @@ export const Navbar = () => {
           Home
         </Link>
         <button className="text-white block lg:hidden" type="button">
-          <span className="material-icons">menu</span>
+          <span className="text-lime-500">menu</span>
         </button>
         <ul className="hidden lg:flex space-x-4">
           <li>

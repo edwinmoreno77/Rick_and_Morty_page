@@ -1,5 +1,7 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { Context } from "../store/appContext";
+import { getCharacterById } from "../api/getData";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import blackHeart from "../assets/blackHeart.ico";
@@ -7,46 +9,45 @@ import redHeart from "../assets/redHeart.ico";
 
 export const Character = () => {
   const { id } = useParams();
-  const [data, setdata] = useState(null);
-  const [like, setlike] = useState(false);
+  const [data, setData] = useState(null);
+  const { store, actions } = useContext(Context);
 
-  const fetchData = async () => {
-    try {
-      const response = await fetch(
-        `https://rickandmortyapi.com/api/character/${id}`,
-        {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
-      if (!response.ok) {
-        throw new Error(`Error: ${response.status} ${response.statusText}`);
-      }
-      const data = await response.json();
+  const { addFavorites, removeFavorites } = actions;
+  const { favorites } = store;
 
-      setdata(data);
-    } catch (error) {
-      console.log("Error capturado en el fetch", error);
+  const isFavorite = favorites.some((favorite) => favorite.id == id);
+  const [like, setLike] = useState(isFavorite);
+
+  const handlerLikes = (like, id) => {
+    if (!favorites.some((favorite) => favorite.id == id)) {
+      addFavorites(data);
+    } else {
+      removeFavorites(data);
     }
+    setLike(!like);
   };
 
   useEffect(() => {
+    const fetchData = async () => {
+      const data = await getCharacterById(id);
+      setData(data);
+    };
+
     fetchData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
   return (
     <>
       <Navbar />
-      <div className="container-fluid min_vh ">
+      <div className="container-fluid min_vh">
         <div className="flex flex-col md:flex-row">
-          <div className="w-full md:w-4/12 p-2 flex justify-center">
+          <div className="md:w-5/12 p-5 flex justify-center">
             {data ? (
-              <div className="w-full shadow-lg rounded-lg ">
+              <div className="w-full rounded-lg ">
                 <img
                   src={data?.image}
-                  className="rounded w-full shadow-2xl"
+                  className="rounded w-full shadow-lg"
                   alt="..."
                 />
               </div>
@@ -56,7 +57,7 @@ export const Character = () => {
               </div>
             )}
           </div>
-          <div className="w-full md:w-8/12 text-center md:pl-5">
+          <div className="w-full md:w-7/12 text-center md:pl-5">
             {data ? (
               <>
                 <h3 className="text-3xl font-bold my-5">{data?.name}</h3>
@@ -73,7 +74,7 @@ export const Character = () => {
                   >
                     Volver
                   </Link>
-                  <span onClick={() => setlike(!like)}>
+                  <span onClick={() => handlerLikes(like, id)}>
                     <img
                       className="cursor-pointer transition ease-in-out  hover:scale-125"
                       src={like ? redHeart : blackHeart}

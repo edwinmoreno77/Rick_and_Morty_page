@@ -6,6 +6,7 @@ import { Search } from "./views/Search";
 import { NotFound } from "./views/NotFound";
 import injectContext from "./store/appContext";
 import "./App.css";
+import { Favorites } from "./views/Favorites";
 
 function App() {
   return (
@@ -14,9 +15,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/list" element={<PageList />} />
-          <Route path="/favorites" element={<NotFound />} />
+          <Route path="/favorites" element={<Favorites />} />
           <Route path="/search" element={<Search />} />
           <Route path="/search/:id" element={<Character />} />
+          <Route path="/favorites/:id" element={<Character />} />
           <Route path="/list/:id" element={<Character />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

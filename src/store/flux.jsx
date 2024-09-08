@@ -1,3 +1,5 @@
+import { getPagesRickAndMorty } from "../api/getData";
+
 // eslint-disable-next-line no-unused-vars
 const getState = ({ getStore, getActions, setStore }) => {
   return {
@@ -8,24 +10,10 @@ const getState = ({ getStore, getActions, setStore }) => {
     },
 
     actions: {
-      getPages: () => {
+      getPages: async () => {
         const { page } = getStore();
-
-        fetch(`https://rickandmortyapi.com/api/character/?page=${page}`)
-          .then((response) => {
-            if (!response.ok) {
-              throw new Error(
-                `Error: ${response.status} ${response.statusText}`
-              );
-            }
-            return response.json();
-          })
-          .then((data) => {
-            setStore({
-              pageData: data.results,
-            });
-          })
-          .catch((error) => console.log("error :>> ", error));
+        const pageData = await getPagesRickAndMorty(page);
+        setStore({ pageData });
       },
       increasePage: () => {
         const { page } = getStore();
@@ -42,13 +30,13 @@ const getState = ({ getStore, getActions, setStore }) => {
       setPage: (page) => {
         setStore({ page });
       },
-      addFavorites: (id) => {
+      addFavorites: (favorite) => {
         const { favorites } = getStore();
-        setStore({ favorites: [...favorites, id] });
+        setStore({ favorites: [...favorites, favorite] });
       },
-      removeFavorites: (id) => {
+      removeFavorites: (favorite) => {
         const { favorites } = getStore();
-        const newFavorites = favorites.filter((item) => item != id);
+        const newFavorites = favorites.filter((item) => item.id != favorite.id);
         setStore({ favorites: newFavorites });
       },
     },
