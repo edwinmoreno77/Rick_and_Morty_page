@@ -1,12 +1,12 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { PageList } from "./views/PageList";
+import { Favorites } from "./views/Favorites";
 import { Character } from "./views/Character";
-import { Home } from "./views/Home";
-import { Search } from "./views/Search";
+import { PageList } from "./views/PageList";
 import { NotFound } from "./views/NotFound";
+import { Search } from "./views/Search";
+import { Home } from "./views/Home";
 import injectContext from "./store/appContext";
 import "./App.css";
-import { Favorites } from "./views/Favorites";
 
 function App() {
   return (
