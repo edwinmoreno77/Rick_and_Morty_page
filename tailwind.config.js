@@ -7,7 +7,7 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                'cursive': ['"Brush Script MT"', '"Comic Sans MS"', '"Pacifico"', '"Dancing Script"', 'cursive'],
+                'cursive': ['cursive', '"Comic Sans MS"', '"Pacifico"', '"Dancing Script"', '"Brush Script MT"',],
             },
         },
     },
