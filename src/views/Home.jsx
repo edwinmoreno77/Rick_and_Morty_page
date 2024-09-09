@@ -9,7 +9,7 @@ export const Home = () => {
     <>
       <Navbar />
       <Carousels />
-      <div className="bg-gray-900 text-lime-500 p-5">
+      <main className="bg-gray-900 text-lime-500 p-5">
         <div className="text-center mt-2 min_vh">
           <h1 className="text-center text-4xl font-bold hover:brightness-150">
             Welcome
@@ -32,7 +32,7 @@ export const Home = () => {
             />
           </div>
         </div>
-      </div>
+      </main>
       <Footer />
     </>
   );

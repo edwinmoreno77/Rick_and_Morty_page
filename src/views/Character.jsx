@@ -40,7 +40,7 @@ export const Character = () => {
   return (
     <>
       <Navbar />
-      <div className="container-fluid min_vh">
+      <main className="container-fluid min_vh">
         <div className="flex flex-col md:flex-row">
           <div className="md:w-5/12 p-5 flex justify-center">
             {data ? (
@@ -94,7 +94,7 @@ export const Character = () => {
             )}
           </div>
         </div>
-      </div>
+      </main>
       <Footer />
     </>
   );

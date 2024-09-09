@@ -11,7 +11,7 @@ export const Favorites = () => {
   return (
     <>
       <Navbar />
-      <div className="container mx-auto min-h-screen">
+      <main className="container mx-auto min-h-screen">
         <h1 className="text-center pt-3 text-4xl text-lime-500 font-bold underline decoration-lime-500 tracking-tight">
           Favorites
         </h1>
@@ -26,7 +26,7 @@ export const Favorites = () => {
             ))}
           </div>
         )}
-      </div>
+      </main>
       <Footer />
     </>
   );

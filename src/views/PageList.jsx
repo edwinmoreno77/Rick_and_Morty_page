@@ -16,7 +16,7 @@ export const PageList = () => {
   return (
     <>
       <Navbar />
-      <div className="container mx-auto">
+      <main className="container mx-auto">
         <h1 className="text-center pt-3 text-4xl text-lime-500 font-bold underline decoration-lime-500 tracking-tight">
           Character List
         </h1>
@@ -25,7 +25,7 @@ export const PageList = () => {
             <Card key={item.id} item={item} />
           ))}
         </div>
-      </div>
+      </main>
       <Pagination />
       <Footer />
     </>
