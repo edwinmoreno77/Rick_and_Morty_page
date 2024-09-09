@@ -24,7 +24,7 @@ export const Card = ({ item }) => {
 
   return (
     <>
-      <div key={item?.id} className="flex justify-center items-center p-2">
+      <article key={item?.id} className="flex justify-center items-center p-2">
         <div className="max-w-sm transition ease-in-out duration-300 bg-slate-50 hover:bg-white scale-95 hover:scale-105 rounded-lg shadow-md hover:shadow-2xl brightness-95 hover:brightness-105 hover:skew-y-1">
           <Link to={`${item?.id}`}>
             <img
@@ -56,7 +56,7 @@ export const Card = ({ item }) => {
             </div>
           </div>
         </div>
-      </div>
+      </article>
     </>
   );
 };
