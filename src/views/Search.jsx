@@ -2,38 +2,22 @@ import { useState } from "react";
 import { Navbar } from "../components/Navbar";
 import { Card } from "../components/Card";
 import { Footer } from "../components/Footer";
+import { getCharacterByName } from "../api/getData";
 import rickAndMortyImg from "../assets/rickAndMortyImg.png";
 
 export const Search = () => {
-  const [search, setSearch] = useState("");
+  const [name, setName] = useState("");
   const [data, setdata] = useState(null);
 
-  const fetchData = async (search) => {
-    try {
-      const response = await fetch(
-        `https://rickandmortyapi.com/api/character/?name=${search}`,
-        {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
-      if (!response.ok) {
-        throw new Error(`Error: ${response.status} ${response.statusText}`);
-      }
-      const data = await response.json();
-
-      setdata(data.results);
-    } catch (error) {
-      console.log("Error capturado en el fetch", error);
-    }
+  const searchByName = async (name) => {
+    const data = await getCharacterByName(name);
+    setdata(data);
   };
 
   return (
     <>
       <Navbar />
-      <div className="container mx-auto min-h-screen">
+      <main className="container mx-auto min-h-screen">
         <h1 className="text-center mt-3 text-3xl font-bold text-lime-500 hover:brightness-110">
           Search Character by Name
         </h1>
@@ -47,9 +31,9 @@ export const Search = () => {
           <input
             className="form-input w-full md:w-1/3 p-1 border rounded shadow-lg"
             type="text"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            onKeyDown={() => fetchData(search)}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            onKeyDown={() => searchByName(name)}
           />
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-1 transition ease-in-out">
@@ -57,7 +41,7 @@ export const Search = () => {
             <Card key={item.id} item={item} />
           ))}
         </div>
-      </div>
+      </main>
       <Footer />
     </>
   );
