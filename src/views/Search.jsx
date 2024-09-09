@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Navbar } from "../components/Navbar";
 import { Card } from "../components/Card";
 import { Footer } from "../components/Footer";
+import rickAndMortyImg from "../assets/rickAndMortyImg.png";
 
 export const Search = () => {
   const [search, setSearch] = useState("");
@@ -33,10 +34,16 @@ export const Search = () => {
     <>
       <Navbar />
       <div className="container mx-auto min-h-screen">
-        <h1 className="text-center mt-3 text-3xl font-bold">
+        <h1 className="text-center mt-3 text-3xl font-bold text-lime-500 hover:brightness-110">
           Search Character by Name
         </h1>
-        <div className="flex m-2 p-2 justify-center">
+        <div className="flex flex-col items-center justify-center mt-3">
+          <img
+            className="animate-bounce transition ease-in-out duration-300"
+            src={rickAndMortyImg}
+            width={180}
+            alt=""
+          />
           <input
             className="form-input w-full md:w-1/3 p-1 border rounded shadow-lg"
             type="text"

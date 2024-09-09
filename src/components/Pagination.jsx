@@ -25,7 +25,7 @@ export const Pagination = () => {
           >
             <a
               className={`py-2 px-3 ml-0 shadow-lg leading-tight text-white bg-lime-500 border border-gray-300 rounded-l-lg cursor-pointer user-select-none ${
-                page <= 1 ? "opacity-50 cursor-not-allowed" : ""
+                page <= 1 ? "bg-lime-900 text-gray-500 cursor-not-allowed" : ""
               }`}
             >
               Previous
@@ -61,7 +61,7 @@ export const Pagination = () => {
           <li
             onClick={increasePage}
             className={`py-2 px-3 shadow-lg user-select-none leading-tight text-white bg-lime-500 border border-gray-300 rounded-r-lg cursor-pointer user-select-none ${
-              page >= 42 ? "opacity-50 cursor-not-allowed" : ""
+              page >= 42 ? "bg-lime-900 text-gray-500 cursor-not-allowed" : ""
             }`}
           >
             <a>Next</a>
