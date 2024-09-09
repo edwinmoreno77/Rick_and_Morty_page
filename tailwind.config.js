@@ -5,7 +5,11 @@ export default {
         "./src/**/*.{js,ts,jsx,tsx}",
     ],
     theme: {
-        extend: {},
+        extend: {
+            fontFamily: {
+                'cursive': ['"Brush Script MT"', '"Comic Sans MS"', '"Pacifico"', '"Dancing Script"', 'cursive'],
+            },
+        },
     },
     plugins: [],
 }
