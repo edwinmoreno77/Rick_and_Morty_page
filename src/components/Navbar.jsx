@@ -3,7 +3,7 @@ import navbarRM from "../assets/navbarRM.png";
 import { useState } from "react";
 
 export const Navbar = () => {
-  const [hidden, sethidden] = useState(false);
+  const [hidden, sethidden] = useState(true);
 
   const handlerMenu = () => {
     sethidden(!hidden);
