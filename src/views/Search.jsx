@@ -29,7 +29,7 @@ export const Search = () => {
             alt=""
           />
           <input
-            className="form-input w-full md:w-1/3 p-1 border rounded shadow-lg"
+            className="form-input :w-1/3 p-1 border rounded shadow-lg"
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
