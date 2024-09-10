@@ -30,35 +30,26 @@ export const Navbar = () => {
           }  text-white lg:mb-0 block lg:hidden`}
           type="button"
         >
-          <span className="text-lime-500 text-2xl">Menu</span>
+          <span className="text-lime-500 text-2xl font-bold">Menu</span>
         </button>
         <ul className={`${hidden && "hidden"} lg:flex space-x-0 lg:space-x-4`}>
           <li>
-            <Link to={`/`} className="hover:text-lime-300 transition-colors">
+            <Link to={`/`} className="hover:text-lime-300">
               Home
             </Link>
           </li>
           <li>
-            <Link
-              to={`/list`}
-              className="hover:text-lime-300 transition-colors"
-            >
+            <Link to={`/list`} className="hover:text-lime-300">
               List
             </Link>
           </li>
           <li>
-            <Link
-              to={`/favorites`}
-              className="hover:text-lime-300 transition-colors"
-            >
+            <Link to={`/favorites`} className="hover:text-lime-300">
               Favorites
             </Link>
           </li>
           <li>
-            <Link
-              to={`/search`}
-              className="hover:text-lime-300 transition-colors"
-            >
+            <Link to={`/search`} className="hover:text-lime-300">
               Search
             </Link>
           </li>
