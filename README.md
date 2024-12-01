@@ -3,8 +3,8 @@
 Bienvenido a **Rick and Morty Web App**, una aplicación web desarrollada en React que utiliza la API de [Rick and Morty](https://rickandmortyapi.com/) para mostrar información sobre los personajes de la serie. Este proyecto incluye funciones como búsqueda por nombre, una lista paginada de personajes, visualización de detalles y la capacidad de agregar personajes favoritos.
 
 <div style="display: flex; justify-content: center; gap: 10px;">
-  <img src="https://github.com/edwinmoreno77/Rick_and_Morty_page/tree/main/assets/rick_and_mortyGif.gif" alt="pc" width="200">
-  <img src="https://github.com/edwinmoreno77/fatima-app-backend/blob/main/frontend/assets/rick_and_mortyMobileGif.gif" alt="mobile" width="600">
+  <img src="https://github.com/edwinmoreno77/Rick_and_Morty_page/blob/main/assets/rick_and_mortyGif.gif" alt="pc" width="600">
+  <img src="https://github.com/edwinmoreno77/Rick_and_Morty_page/blob/main/assets/rick_and_mortyMobileGif.gif" alt="mobile" width="200">
 </div>
 
 ## Características
